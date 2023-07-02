@@ -10,7 +10,6 @@ float[,] GetRandomArray(int rows, int columns)
         {
             matrix[i, j] = Random.Shared.NextSingle() * 100;
         }
-        
     }
     return matrix;
 }
