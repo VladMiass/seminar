@@ -32,7 +32,7 @@ Console.WriteLine("Введи через пробел номер строки и
 string[] mn = Console.ReadLine().Split(" ");
 int m = Convert.ToInt32(mn[0]);
 int n = Convert.ToInt32(mn[1]);
-if(m >= 0 && m <= ROWS && n >= 0 && n <= COLUMNS)
+if(m >= 0 && m < ROWS && n >= 0 && n < COLUMNS)
     Console.WriteLine("Элемент строка " + m + " столбец " + n + " равен " + myMatrix[m, n]);
 else
     Console.WriteLine("Такого элемента нет");
