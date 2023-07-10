@@ -1,11 +1,20 @@
-﻿int Perechislenie(int FirstNumber, int LastNumber)
+﻿int Ackerman(int N, int M)
 {
-    if(FirstNumber >= LastNumber) return FirstNumber;
-    return FirstNumber + Perechislenie(FirstNumber + 1, LastNumber);
+    if(N == 0) return M + 1;
+    else
+    {
+        if(M == 0) return Ackerman(N - 1, 1);
+        else
+        {
+            if(N > 0 && M > 0) return Ackerman(N - 1, Ackerman(N, M -1));
+        }
+    }
+    Console.WriteLine("Не вычислено");
+    return 0;
 }
 
-int M = 1;
-int N = 15;
+int N = 3;
+int M = 3;
 int S = 0;
-S = Perechislenie(M, N);
-Console.Write("Сумма цифр = " + S);
+S = Ackerman(N, M);
+Console.Write("Функция Аккермана для N = " + N + " и M = " + M + " равна " + S);
